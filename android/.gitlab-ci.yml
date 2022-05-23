@@ -1,0 +1,21 @@
+image: node:alpine
+
+stages:
+  - sentry
+
+sentry_commits:
+  stage: sentry
+  image: 
+    name: getsentry/sentry-cli
+    entrypoint: [""]
+  script:
+    - export SENTRY_URL=$SENTRY_URL
+    - export SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
+    - export SENTRY_ORG=$SENTRY_ORG
+    - export SENTRY_PROJECT=$SENTRY_PROJECT
+    - export VERSION=$(sentry-cli releases propose-version)
+    - echo "Create a new release $VERSION"
+    - sentry-cli releases new $VERSION
+    - sentry-cli releases set-commits --auto $VERSION
+  only:
+    - master
