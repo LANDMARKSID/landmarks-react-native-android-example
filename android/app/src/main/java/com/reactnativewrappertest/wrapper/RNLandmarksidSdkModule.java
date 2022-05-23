@@ -19,9 +19,9 @@ public class RNLandmarksidSdkModule extends ReactContextBaseJavaModule {
     private final ReactApplicationContext reactContext;
 
     //TODO : secure the keys in .properties file for safety.
-    private static final String API_KEY = "755a32cf-00fd-4b85-8787-ce177b93d8a0";
-    private static final String APP_ID = "5df70cc3919e370004a297c2";
-    private static final String APP_SECRET = "97pxpfkzFi1Bn9F5TeIrotJsiq3KVPS3AzLNxPPWLwHy3ihO";
+    private static final String API_KEY = "REPLACE_ME";
+    private static final String APP_ID = "REPLACE_ME";
+    private static final String APP_SECRET = "REPLACE_ME";
 
     private static final boolean IS_DEBUG_MODE = BuildConfig.DEBUG;
 
@@ -40,8 +40,9 @@ public class RNLandmarksidSdkModule extends ReactContextBaseJavaModule {
                 .setApiKey(API_KEY)
                 .setAppMetadata(APP_ID, APP_SECRET)
                 .setDebugMode(IS_DEBUG_MODE)
-                .setCustomerId("react-native-android-sample-id")// TODO add actual customer Id here.
-                .setCustomData(getDefaultData()); // TODO remove this when you are using your custom data
+                // TODO set the unique id of your user
+                .setCustomerId("ID of your Customer")// TODO add actual customer Id here.
+                .setCustomData(getDefaultData()); // TODO remove this when you are using your own custom data
 
         ((MainActivity) reactContext.getCurrentActivity()).startSDK(options);
     }
