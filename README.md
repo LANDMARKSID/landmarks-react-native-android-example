@@ -67,7 +67,7 @@ yarn ios
 >Follow the SDK setup guide from the LandmarksID LO Android SDK docs from the link below:
 * [`LandmarksID LO SDK Android`](https://docs.landmarksid.com/docs/android_lo)
 
->To use `Landmarksid LO Android SDK` in react-native application, copy the [`WRAPPER`](https://gitlab.com/landmarksid/mobile-development/landmarksid-sdk-react-native/-/tree/master/android/app/src/main/java/com/reactnativewrappertest/wrapper) folder from this sample application into your own project.
+>To use `Landmarksid LO Android SDK` in react-native application, copy the [`WRAPPER`](android/app/src/main/java/com/reactnativewrappertest/wrapper) folder from this sample application into your own project.
 
 > Add the following line in your `MainApplication.Java` class to register the custom module.
 
